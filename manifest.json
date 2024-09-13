@@ -1,0 +1,20 @@
+{
+  "name": "Nosso Amor",
+  "short_name": "Amor",
+  "start_url": "https://seusiteamor.com",
+  "display": "standalone",
+  "background_color": "#ffebf2",
+  "theme_color": "#ff4081",
+  "icons": [
+    {
+      "src": "/IMG_0129.jpeg",
+      "type": "image/jpeg",
+      "sizes": "192x192"
+    },
+    {
+      "src": "/IMG_0129.jpeg",
+      "type": "image/jpeg",
+      "sizes": "512x512"
+    }
+  ]
+}

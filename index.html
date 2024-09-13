@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nosso Amor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  
+  
+  <a href="/index2.html" class="floating-btn">
+  Jogo da Memória
+</a>
+  
+  
+    <header>
+        <h1>Bem-vinda, Meu amor!</h1>
+        <p>Esse é o nosso cantinho especial 💖</p>
+    </header>
+
+    <section class="hero">
+        <img src="IMG_1113.jpeg" alt="FotoNossa">
+        <h2>"Amar é cuidar, respeitar e celebrar cada momento juntos!"</h2>
+        <audio controls autoplay>
+            <source src="Delacruz_-_Sunshine_(mp3.pm).mp3" type="audio/mpeg">
+            Seu navegador não suporta a reprodução de áudio.
+        </audio>
+    </section>
+
+    <section class="timeline">
+        <h2>Linha do Tempo do Nosso Amor</h2>
+        <div class="event">
+            <h3>Primeiro Encontro</h3>
+            <p>Foi maravilhoso esse dia, seus olhos brilhavam mais que cristal, olhava pra mim como se tivesse achado um diamante 😍</p>
+            <img src="7BAF06CB-F729-490F-A29D-5997E7353B1A.jpeg" alt="Primeiro encontro">
+        </div>
+        <div class="event">
+          <h3>Primeiro Buquê</h3>
+          <p>Esse dia foi muito maravilhoso também, você com medo de levar o buquê kkkkk e eu todo bobo me sentindo um homem realizado de ter feito esse gesto para a mulher certa ❤️🥹</p>
+          <img src="IMG_8162.jpeg" alt="Primeiro Buqu">
+        </div>
+        
+    </section>
+    
+    <section class="countdown">
+        <h2>Próximo aniversário de namoro:</h2>
+        <div id="countdown"></div>
+    </section>
+    
+    
+    <footer>
+        <p>Feito com muito amor por você ❤️</p>
+    </footer>
+</body>
+</html>
+<script>
+  const targetDate = new Date("2024-10-11T00:00:00").getTime();
+
+  const countdown = setInterval(function() {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById("countdown").innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+
+    if (distance < 0) {
+      clearInterval(countdown);
+      document.getElementById("countdown").innerHTML = "Feliz aniversário de namoro!";
+    }
+  }, 1000);
+</script>

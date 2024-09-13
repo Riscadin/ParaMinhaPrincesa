@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Memória</title>
+    <link rel="stylesheet" href="memory-game.css">
+</head>
+<body>
+  
+  <a href="index.html" class="floating-btn">
+  Início
+</a>
+  
+  
+    <h1>Jogo da Memória</h1>
+    <p>Tente encontrar todos os pares do nosso amor!</p>
+    <div class="memory-game">
+        <!-- Cada carta terá uma frente e uma parte de trás -->
+        <div class="memory-card" data-framework="coração">
+            <img class="front-face" src="/1714251057479_filtered.jpeg" alt="Coração">
+            <img class="back-face" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvc8UlzH1XQ6L2eNEWXAR2Tn977qFnIecTA&usqp=CAU" alt="Fundo">
+        </div>
+        <div class="memory-card" data-framework="coração">
+            <img class="front-face" src="/1714251057479_filtered.jpeg" alt="Coração">
+            <img class="back-face" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvc8UlzH1XQ6L2eNEWXAR2Tn977qFnIecTA&usqp=CAU" alt="Fundo">
+        </div>
+
+        <!-- Adicione mais pares de cartas aqui -->
+        <div class="memory-card" data-framework="estrela">
+            <img class="front-face" src="/E4A7B1EB-AC0F-4A41-BB20-8C2AE4447883.jpeg" alt="Coração">
+<img class="back-face" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvc8UlzH1XQ6L2eNEWXAR2Tn977qFnIecTA&usqp=CAU" alt="Fundo">
+        </div>
+        <div class="memory-card" data-framework="estrela">
+            <img class="front-face" src="/E4A7B1EB-AC0F-4A41-BB20-8C2AE4447883.jpeg" alt="Estrela">
+            <img class="back-face" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvc8UlzH1XQ6L2eNEWXAR2Tn977qFnIecTA&usqp=CAU" alt="Fundo">
+        </div>
+        
+        
+        
+        
+        
+        <div class="memory-card" data-framework="c">
+  <img class="front-face" src="/IMG_2255.jpeg" alt="Circulo">
+  <img class="back-face" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvc8UlzH1XQ6L2eNEWXAR2Tn977qFnIecTA&usqp=CAU" alt="Fundo">
+</div>
+<div class="memory-card" data-framework="c">
+  <img class="front-face" src="/IMG_2255.jpeg" alt="Circulo">
+  <img class="back-face" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvc8UlzH1XQ6L2eNEWXAR2Tn977qFnIecTA&usqp=CAU" alt="Fundo">
+</div>
+
+
+
+
+<div class="memory-card" data-framework="k">
+  <img class="front-face" src="/IMG_4187.jpeg" alt="Circulo">
+  <img class="back-face" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvc8UlzH1XQ6L2eNEWXAR2Tn977qFnIecTA&usqp=CAU" alt="Fundo">
+</div>
+<div class="memory-card" data-framework="k">
+  <img class="front-face" src="/IMG_4187.jpeg" alt="Circulo">
+  <img class="back-face" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvc8UlzH1XQ6L2eNEWXAR2Tn977qFnIecTA&usqp=CAU" alt="Fundo">
+</div>
+
+
+
+
+<div class="memory-card" data-framework="L">
+  <img class="front-face" src="/IMG_0137.jpeg" alt="Circulo">
+  <img class="back-face" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvc8UlzH1XQ6L2eNEWXAR2Tn977qFnIecTA&usqp=CAU" alt="Fundo">
+</div>
+<div class="memory-card" data-framework="L">
+  <img class="front-face" src="/IMG_0137.jpeg" alt="Circulo">
+  <img class="back-face" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvc8UlzH1XQ6L2eNEWXAR2Tn977qFnIecTA&usqp=CAU" alt="Fundo">
+</div>
+
+
+
+<div class="memory-card" data-framework="R">
+  <img class="front-face" src="/IMG_2928.jpeg" alt="Circulo">
+  <img class="back-face" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvc8UlzH1XQ6L2eNEWXAR2Tn977qFnIecTA&usqp=CAU" alt="Fundo">
+</div>
+<div class="memory-card" data-framework="R">
+  <img class="front-face" src="/IMG_2928.jpeg" alt="Circulo">
+  <img class="back-face" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnvc8UlzH1XQ6L2eNEWXAR2Tn977qFnIecTA&usqp=CAU" alt="Fundo">
+</div>
+
+
+
+
+    </div>
+
+    <script src="memory-game.js"></script>
+</body>
+</html>
+<<script>
+    const cards = document.querySelectorAll('.memory-card');
+
+let hasFlippedCard = false;
+let lockBoard = false;
+let firstCard, secondCard;
+
+function flipCard() {
+  if (lockBoard) return; // O tabuleiro é bloqueado apenas se estivermos no meio de uma ação
+  if (this === firstCard) return; // Previne clicar na mesma carta
+
+  this.classList.add('flip'); // Vira a carta imediatamente ao clicar
+
+  if (!hasFlippedCard) {
+    hasFlippedCard = true;
+    firstCard = this; // Guarda a primeira carta clicada
+    return;
+  }
+
+  secondCard = this; // Armazena a segunda carta clicada
+  lockBoard = true; // Trava o tabuleiro enquanto verifica o par
+  checkForMatch();
+}
+
+function checkForMatch() {
+  let isMatch = firstCard.dataset.framework === secondCard.dataset.framework;
+
+  isMatch ? disableCards() : unflipCards();
+}
+
+function disableCards() {
+  firstCard.removeEventListener('click', flipCard);
+  secondCard.removeEventListener('click', flipCard);
+
+  resetBoard();
+}
+
+function unflipCards() {
+  setTimeout(() => {
+    firstCard.classList.remove('flip');
+    secondCard.classList.remove('flip');
+
+    resetBoard();
+  }, 700); // Tempo para desvirar as cartas foi reduzido para 0.7 segundos
+}
+
+function resetBoard() {
+    [hasFlippedCard, lockBoard] = [false, false]; // Reseta o estado para permitir novos cliques
+    [firstCard, secondCard] = [null, null];
+}
+
+(function shuffle() {
+  cards.forEach(card => {
+    let randomPos = Math.floor(Math.random() * 12);
+    card.style.order = randomPos;
+  });
+})();
+
+cards.forEach(card => card.addEventListener('click', flipCard));
+</script>
