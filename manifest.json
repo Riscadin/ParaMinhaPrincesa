@@ -1,6 +1,6 @@
 {
   "name": "Nosso Amor",
-  "short_name": "Amor",
+  "short_name": "❤️‍🩹",
   "start_url": "https://riscadin.github.io/ParaMinhaPrincesa/",
   "display": "standalone",
   "background_color": "#ffebf2",
@@ -8,12 +8,12 @@
   "icons": [
     {
       "src": "IMG_4641.png.png",
-      "type": "image/jpeg",
+      "type": "image/png",
       "sizes": "192x192"
     },
     {
       "src": "IMG_4641.png.png",
-      "type": "image/jpeg",
+      "type": "image/png",
       "sizes": "512x512"
     }
   ]
